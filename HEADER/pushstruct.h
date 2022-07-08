@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 06:33:01 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/07 01:51:46 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/08 04:26:55 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 
 typedef struct S_stack
 {
-	int	*nb;
-	int current_size;
+	long int	*nb;
+	int 		current_size;
 }	t_stack;
 
 typedef struct S_all
 {
 	int		max_size;
-	int		a_sorted;
+	int		alr_sorted;
 	int		to_sort;
 	t_stack *stack_a;
 	t_stack *stack_b;

@@ -1,0 +1,73 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hrolle <hrolle@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/07 20:47:26 by hrolle            #+#    #+#             */
+/*   Updated: 2022/07/08 02:38:01 by hrolle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CHECKER_H
+# define CHECKER_H
+#define TIME 100
+#define YES_NO 1
+#include "get_next_line.h"
+#include "../printfd/HEADER/ft_printfd.h"
+
+typedef struct S_stack
+{
+	int             *stack;
+	unsigned int    real_size;
+	unsigned int    current_size;
+	unsigned int    unsorted_size;
+	unsigned int    sorted_size;
+}                   t_stack;
+
+/*----------------CMD-----------------*/
+
+void    pb(t_stack *a, t_stack *b);
+void    push(t_stack *a, t_stack *b);
+void    pa(t_stack *b, t_stack *a);
+void    rotate(t_stack *nb);
+void    ra(t_stack *a);
+void    rb(t_stack *b);
+void    rr(t_stack *a, t_stack *b);
+void    reverse_rotate(t_stack *nb);
+void    rra(t_stack *a);
+void    rrb(t_stack *b);
+void    rrr(t_stack *a, t_stack *b);
+void    swap(t_stack *nb);
+void    sa(t_stack *a);
+void    sb(t_stack *b);
+void    ss(t_stack *a, t_stack *b);
+
+/*---------------UTILS----------------*/
+
+void	set_stacks(t_stack *a, t_stack *b, char **av, unsigned int size);
+int		arg_check(char **av);
+int		ft_atoi(const char *str);
+int		ft_strcmp(char *s1, char *s2);
+void	exit_error(char *str);
+int		sorted_checker(t_stack *n);
+
+/*---------------PRINT----------------*/
+
+void	print_stacks(t_stack *a, t_stack *b);
+void	w_print_stacks(t_stack *a, t_stack *b, int yes_no, int time);
+void    p_pb(t_stack *a, t_stack *b, int yes_no, int time);
+void    p_pa(t_stack *a, t_stack *b, int yes_no, int time);
+void    p_rra(t_stack *a, t_stack *b, int yes_no, int time);
+void    p_rrb(t_stack *a, t_stack *b, int yes_no, int time);
+void    p_rrr(t_stack *a, t_stack *b, int yes_no, int time);
+void    p_ra(t_stack *a, t_stack *b, int yes_no, int time);
+void    p_rb(t_stack *a, t_stack *b, int yes_no, int time);
+void    p_rr(t_stack *a, t_stack *b, int yes_no, int time);
+void    p_sa(t_stack *a, t_stack *b, int yes_no, int time);
+void    p_sb(t_stack *a, t_stack *b, int yes_no, int time);
+void    p_ss(t_stack *a, t_stack *b, int yes_no, int time);
+void	p_comment(t_stack *a, t_stack *b, int yes_no, int time, char *str);
+
+#endif

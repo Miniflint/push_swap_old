@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:23:34 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/07 01:41:58 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/08 05:42:31 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@
 void	three_numbers(t_all *all);
 void	five_numbers(t_all *all);
 void	big_sort(__unused t_all *all);
+	/* sorting utils */
+int		get_max(t_all *all);
+int		get_min_max_i(t_all *all, int max, int len);
+void	p_and_r_number(t_all *all);
 
 /* Errors handling */
 void	little_handler(int i);
@@ -42,7 +46,6 @@ int		ft_isdigit(char c);
 int		ft_atoi(char *str);
 void	ft_atoi_array(char *str, t_all *all);
 void	create_array(char **argv, t_all *all);
-void	print_stacks(t_all *all);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 int		bloc_count(const char *s, char c);
@@ -63,11 +66,10 @@ void	rrr(t_all *all);
 	/* push */
 void	pa(t_all *all);
 void	pb(t_all *all);
-		/* utils push */
-void    push(t_stack *stack1, t_stack *stack2);
 
 
 /* deleted later */
 void	check_func(t_all *all);
+void	print_stacks(t_stack *a, t_stack *b);
 
 #endif
