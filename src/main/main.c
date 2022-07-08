@@ -6,11 +6,25 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:28:29 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/08 05:40:28 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/08 06:55:22 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../HEADER/pushswap.h"
+
+int	check_order(t_all *all)
+{
+	int	i;
+
+	i = 0;
+	while (i < all->stack_a->current_size - 1)
+	{
+		i++;
+		if (all->stack_a->nb[i - 1] > all->stack_a->nb[i])
+			return (0);
+	}
+	return (1);
+}
 
 void	send_under_seven(t_all *all)
 {
@@ -38,10 +52,9 @@ int	main(int argc, char **argv)
 		__init__all(&all, argc - 1);
 		create_array(argv, &all);
 	}
-	// check_double(&all);
-	// if (check_order(&all))
-	// 	handle_success("Already in order", &all);
-	//send_under_seven(&all);
-	pb(&all);
+	check_double(&all);
+	if (check_order(&all))
+		handle_success("Already in order", &all);
+	send_under_seven(&all);
 	return (0);
 }

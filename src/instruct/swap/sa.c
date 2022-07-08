@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_correct.c                                  :+:      :+:    :+:   */
+/*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 01:08:44 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/07 01:54:56 by tgoel            ###   ########.fr       */
+/*   Created: 2022/06/30 09:11:31 by tgoel             #+#    #+#             */
+/*   Updated: 2022/07/01 21:14:54 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../HEADER/pushswap.h"
+#include "../../../HEADER/pushswap.h"
 
-void	check_double(t_all *all)
+void	sa(t_all *all, int ss)
 {
-	int	i;
-	int	j;
+	int	tmp;
 
-	i = 0;
-	while (i < all->max_size)
-	{
-		j = i + 1;
-		while (j < all->max_size)
-		{
-			if (i != j)
-				if (all->stack_a->nb[i] == all->stack_a->nb[j])
-					handle_error("Doublons !");
-			j++;
-		}
-		i++;
-	}
+	tmp = all->stack_a->nb[1];
+	all->stack_a->nb[1] = all->stack_a->nb[0];
+	all->stack_a->nb[0] = tmp;
+	if (ss)
+		ft_printf("sa\n");
 }

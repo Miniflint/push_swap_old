@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_correct.c                                  :+:      :+:    :+:   */
+/*   ra.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 01:08:44 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/07 01:54:56 by tgoel            ###   ########.fr       */
+/*   Created: 2022/06/21 19:31:56 by tgoel             #+#    #+#             */
+/*   Updated: 2022/07/06 14:13:28 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../HEADER/pushswap.h"
+#include "../../../HEADER/pushswap.h"
 
-void	check_double(t_all *all)
+void	ra(t_all *all, int rr)
 {
+	int	tmp;
 	int	i;
-	int	j;
 
-	i = 0;
-	while (i < all->max_size)
+	i = 1;
+	if (!all->stack_a->current_size)
+		return ;
+	tmp = all->stack_a->nb[0];
+	while (i < (all->stack_a->current_size))
 	{
-		j = i + 1;
-		while (j < all->max_size)
-		{
-			if (i != j)
-				if (all->stack_a->nb[i] == all->stack_a->nb[j])
-					handle_error("Doublons !");
-			j++;
-		}
+		all->stack_a->nb[i - 1] = all->stack_a->nb[i];
 		i++;
 	}
+	all->stack_a->nb[all->stack_a->current_size - 1] = tmp;
+	if (rr)
+		ft_printf("ra\n");
 }

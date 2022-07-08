@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_correct.c                                  :+:      :+:    :+:   */
+/*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 01:08:44 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/07 01:54:56 by tgoel            ###   ########.fr       */
+/*   Created: 2022/06/21 19:32:07 by tgoel             #+#    #+#             */
+/*   Updated: 2022/07/01 21:16:42 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../HEADER/pushswap.h"
+#include "../../../HEADER/pushswap.h"
 
-void	check_double(t_all *all)
+void	rrb(t_all *all, int rrr)
 {
+	int	tmp;
 	int	i;
-	int	j;
 
-	i = 0;
-	while (i < all->max_size)
+	if (!all->stack_b->current_size)
+		return ;
+	i = all->stack_b->current_size - 1;
+	tmp = all->stack_b->nb[all->stack_b->current_size - 1];
+	while (i > 0)
 	{
-		j = i + 1;
-		while (j < all->max_size)
-		{
-			if (i != j)
-				if (all->stack_a->nb[i] == all->stack_a->nb[j])
-					handle_error("Doublons !");
-			j++;
-		}
-		i++;
+		all->stack_b->nb[i] = all->stack_b->nb[i - 1];
+		i--;
 	}
+	all->stack_b->nb[0] = tmp;
+	if (rrr)
+		ft_printf("rrb\n");
 }
