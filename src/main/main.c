@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:28:29 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/08 06:55:22 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/09 21:19:46 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,22 @@ int	check_order(t_all *all)
 
 void	send_under_seven(t_all *all)
 {
+	int i;
+
 	if (all->max_size == 3)
 		three_numbers(all);
 	else if (all->max_size <= 5)
 		five_numbers(all);
 	else
-		p_and_r_number(all);
+	{
+		i = all->max_size;
+		while(i > 0)
+		{
+			p_and_r_number(all);
+			i--;
+		}
+		big_sort_b(all);
+	}
 }
 
 int	main(int argc, char **argv)

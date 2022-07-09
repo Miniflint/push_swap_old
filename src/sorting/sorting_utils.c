@@ -6,23 +6,23 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 02:22:36 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/08 06:53:13 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/09 20:25:17 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../HEADER/pushswap.h"
 
-int	get_max(t_all *all)
+int	get_max(t_stack *stack)
 {
 	int	i;
 	int	tmp;
 
 	i = 0;
 	tmp = INT_MIN;
-	while (i < all->stack_a->current_size)
+	while (i < stack->current_size)
 	{
-		if (all->stack_a->nb[i] > tmp)
-			tmp = all->stack_a->nb[i];
+		if (stack->nb[i] > tmp)
+			tmp = stack->nb[i];
 		i++;
 	}
 	return(tmp);
@@ -41,7 +41,6 @@ int	get_min(t_all *all)
 			tmp = all->stack_a->nb[i];
 		i++;
 	}
-	ft_printf("%i\n", tmp);
 	return(tmp);
 }
 
@@ -79,7 +78,7 @@ void	p_and_r_number(t_all *all)
 	int	len;
 
 	i = 0;
-	max = get_min_max_i(all, get_max(all), 20);
+	max = get_min_max_i(all, get_max(all->stack_a), 20);
 	len = all->to_sort;
 	while (i < len)
 	{
@@ -89,7 +88,5 @@ void	p_and_r_number(t_all *all)
 			ra(all, 1);
 		i++;
 	}
-	print_stacks(all);
 	all->a_sorted += 20;
-	print_stacks(all);
 }
