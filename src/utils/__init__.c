@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 08:16:06 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/08 06:47:07 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/10 19:30:54 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void	__init__all(t_all *all, int size)
 	all->max_size = size;
 	all->a_sorted = 0;
 	all->to_sort = all->max_size - all->a_sorted;
+	all->formula_sort = (all->max_size / 6 + 22);
 	__init__stack(all);
 }
