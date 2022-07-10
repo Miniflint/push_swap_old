@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 02:22:36 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/10 19:22:27 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/10 21:53:40 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	p_and_r_number(t_all *all, int nb)
 	int	max;
 	int	i;
 	int	len;
-
 
 	i = 0;
 	max = get_min_max_i(all, get_max(all->stack_a), nb);

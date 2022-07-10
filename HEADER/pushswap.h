@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:23:34 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/10 19:17:46 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/10 21:21:02 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	p_and_r_number(t_all *all, int nb);
 int		get_min_max_i(t_all *all, int max, int len);
 int		get_min(t_stack *stack);
 int		get_max(t_stack *stack);
+int		i_next_nbr(t_stack *n, int min_size);
 
 /* Errors handling */
 void	little_handler(int i);

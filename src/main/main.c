@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:28:29 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/10 19:30:54 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/10 21:52:03 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,13 @@ void	send_under_seven(t_all *all)
 		five_numbers(all);
 	else
 	{
-		i = all->max_size;
+		i = all->stack_a->current_size;
 		while(i > 0)
 		{
 			j = all->formula_sort;
 			p_and_r_number(all, j / 2);
 			i--;
-			//j /= 4;
-			all->formula_sort = all->stack_a->current_size / 6 + 22;
+			all->formula_sort = ((all->stack_a->current_size / 6) + 32);
 		}
 		big_sort_b(all);
 	}

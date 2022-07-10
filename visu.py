@@ -27,7 +27,10 @@ You can decrease or increase the speed with the matching buttons.
 
 
 RELATIVE_PATH = r'push_swap'
-
+nb_a = 0
+nb_b = 0
+nb = 0
+TK_SILENCE_DEPRECATION=1
 
 class PsGui:
     def __init__(self, master):
@@ -78,11 +81,34 @@ class PsGui:
         self.totalcount = Label(self.statusframe,
                                 text='- operations = ' + str(len(self.cmds)),
                                 font=("monospace", 10))
+        self.op_nb = Label(self.statusframe,
+			                    text="operation nb = ",
+								font=("monospace", 10))
+        self.op_nb_nb = Label(self.statusframe,
+			                    text={nb_b},
+								font=("monospace", 10))
+        self.sort_a = Label(self.statusframe,
+			                    text=f"operation to sort a = {nb_b}",
+								font=("monospace", 10))
+        self.sort_b = Label(self.statusframe,
+			                    text=f"operation to sort b = {nb_b}",
+								font=("monospace", 10))
         self.totalcount.pack(side=LEFT)
+        self.sort_a.pack(side=LEFT)
+        self.sort_b.pack(side=LEFT)
+        self.op_nb.pack(side=LEFT)
+        self.op_nb_nb.pack(side=LEFT)
         self.draw_rectangles()
         self.launch()
 
     def reset(self):
+        global nb, nb_a, nb_b
+        nb_a = 0
+        nb_b = 0
+        nb = 0
+        self.op_nb_nb.config(text=nb)
+        self.sort_a.config(text=f"operation to sort a = {nb_a}")
+        self.sort_b.config(text=f"operation to sort b = {nb_b}")
         self.speed = 0
         self.i = 0
         del self.pile_a[:]
@@ -110,7 +136,7 @@ class PsGui:
         if self.speed == 0:
             self.PauseCtl.config(text='||')
             self.speed = self.prespeed
-        self.speed = self.speed ** 10
+        self.speed = self.speed ** 2
         self.speedmeter.config(text='frame rate = ' \
                                     + '{:.2e}'.format(self.speed))
 
@@ -120,20 +146,27 @@ class PsGui:
                                     + '{:.2e}'.format(self.speed))
 
     def launch_cmds(self, cmd):
+        global nb_a, nb_b, nb
+        nb += 1
         if cmd == b'sa' and len(self.pile_a) >= 2:
             self.pile_a[0], self.pile_a[1] = self.pile_a[1], self.pile_a[0]
         if cmd == b'sb' and len(self.pile_b) >= 2:
             self.pile_b[0], self.pile_b[1] = self.pile_b[1], self.pile_b[0]
+            nb_b += 1
         if cmd == b'ss':
             if (len(self.pile_a) >= 2):
                 self.pile_a[0], self.pile_a[1] = self.pile_a[1], self.pile_a[0]
             if (len(self.pile_b) >= 2):
                 self.pile_b[0], self.pile_b[1] = self.pile_b[1], self.pile_b[0]
+            nb_b += 1
+            nb_a += 1
         if cmd == b'ra' and len(self.pile_a) >= 2:
             self.pile_a.append(self.pile_a[0])
+            nb_a += 1
             del self.pile_a[0]
         if cmd == b'rb' and len(self.pile_b) >= 2:
             self.pile_b.append(self.pile_b[0])
+            nb_b += 1
             del self.pile_b[0]
         if cmd == b'rr':
             if (len(self.pile_a) >= 2):
@@ -142,11 +175,14 @@ class PsGui:
             if (len(self.pile_b) >= 2):
                 self.pile_b.append(self.pile_b[0])
                 del self.pile_b[0]
+            nb_a += 1
+            nb_b += 1
         if cmd == b'rra' and len(self.pile_a) >= 2:
             self.pile_a = [self.pile_a[-1]] + self.pile_a
             del self.pile_a[-1]
         if cmd == b'rrb' and len(self.pile_b) >= 2:
             self.pile_b = [self.pile_b[-1]] + self.pile_b
+            nb_b += 1
             del self.pile_b[-1]
         if cmd == b'rrr':
             if (len(self.pile_a) >= 2):
@@ -155,12 +191,21 @@ class PsGui:
             if (len(self.pile_b) >= 2):
                 self.pile_b = [self.pile_b[-1]] + self.pile_b
                 del self.pile_b[-1]
+            nb_b += 1
+            nb_a += 1
         if cmd == b'pa' and len(self.pile_b) >= 1:
             self.pile_a = [self.pile_b[0]] + self.pile_a
+            nb_b += 1
             del self.pile_b[0]
         if cmd == b'pb' and len(self.pile_a) >= 1:
             self.pile_b = [self.pile_a[0]] + self.pile_b
+            nb_a += 1
             del self.pile_a[0]
+        self.op_nb_nb.config(text=nb)
+        if (nb_a % 10 == 0 or not self.pile_a):
+            self.sort_a.config(text=f"operation to stack a = {nb_a}")
+        if (nb_b % 10 == 0 or not self.pile_b):
+            self.sort_b.config(text=f"operation to stack b = {nb_b}")
         return self.pile_a, self.pile_b
 
     def set_color(self, index):
