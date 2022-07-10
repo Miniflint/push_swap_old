@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 18:29:56 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/09 22:16:03 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/10 18:49:33 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,17 +67,23 @@ void	big_sort_b(t_all *all)
 	{
 		j = 0;
 		max_i = get_max_index(all->stack_b);
-		while (j < all->stack_b->current_size - max_i)
+		if (max_i > all->stack_b->current_size / 2)
 		{
-			rrb(all, 1);
-			j++;
+			while (j < all->stack_b->current_size - max_i)
+			{
+				rrb(all, 1);
+				j++;
+			}
+		}
+		else
+		{
+			while (j < max_i)
+			{
+				rb(all, 1);
+				j++;
+			}
 		}
 		pa(all);
-		while (j > 0)
-		{
-			rb(all, 1);
-			j--;
-		}
 		i--;
 	}
 }
