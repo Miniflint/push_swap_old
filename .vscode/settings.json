@@ -16,6 +16,11 @@
 		"unordered_map": "c",
 		"utility": "c",
 		"vector": "c",
-		"memory": "c"
+		"memory": "c",
+		"get_next_line.h": "c",
+		"algorithm": "c",
+		"chrono": "c",
+		"limits": "c",
+		"ratio": "c"
 	}
 }

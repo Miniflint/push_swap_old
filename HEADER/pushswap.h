@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:23:34 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/10 21:21:02 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/10 23:01:29 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 /* Sorting */
 void	three_numbers(t_all *all);
-void	five_numbers(t_all *all);
+void	sort_to_five(t_all *all, int nb);
 void	big_sort_b(t_all *all);
 void	p_and_r_number(t_all *all, int nb);
 

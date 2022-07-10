@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 14:56:01 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/07 00:52:09 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/10 23:10:03 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	three_numbers(t_all *all)
 	nb1 = all->stack_a->nb[0];
 	nb2 = all->stack_a->nb[1];
 	nb3 = all->stack_a->nb[2];
+	if (check_order(all))
+		return ;
 	if (nb1 > nb2 && nb1 > nb3)
 	{
 		ra(all, 1);
@@ -43,7 +45,32 @@ void	three_numbers(t_all *all)
 	}
 }
 
-void	five_numbers(__unused t_all *all)
+void	sort_five(t_all *all, int min)
 {
-	ft_printf("five numbers");
+	if (all->stack_a->nb[3] == min)
+		rra(all, 1);
+	if (all->stack_a->nb[4])
+		if (all->stack_a->nb[4] == min)
+			rra(all, 1);
+	if (all->stack_a->nb[2] == min)
+		ra(all, 1);
+	if (all->stack_a->nb[1] == min)
+		ra(all, 1);
+}
+void	sort_to_five(t_all *all, int nb)
+{
+	int	min;
+
+	while(nb > 3)
+	{
+		min = get_min(all->stack_a);
+		sort_five(all, min);
+		pb(all);
+		nb--;
+	}
+	three_numbers(all);
+	if (all->stack_b->nb[0] < all->stack_b->nb[1])
+		sa(all, 1);
+	pa(all);
+	pa(all);
 }
