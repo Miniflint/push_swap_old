@@ -6,13 +6,13 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 08:16:06 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/10 21:05:49 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 06:56:47 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../HEADER/pushswap.h"
 
-static void __init__stack(t_all *all)
+static void	__init__stack(t_all *all)
 {
 	all->stack_a->nb = malloc(sizeof(int) * (all->max_size + 1));
 	all->stack_b->nb = malloc(sizeof(int) * (all->max_size + 1));

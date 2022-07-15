@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 02:22:36 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/10 21:58:05 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 07:06:47 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	get_max(t_stack *stack)
 			tmp = stack->nb[i];
 		i++;
 	}
-	return(tmp);
+	return (tmp);
 }
 
 int	get_min(t_stack *stack)
@@ -41,7 +41,7 @@ int	get_min(t_stack *stack)
 			tmp = stack->nb[i];
 		i++;
 	}
-	return(tmp);
+	return (tmp);
 }
 
 int	get_min_max_i(t_all *all, int max, int len)

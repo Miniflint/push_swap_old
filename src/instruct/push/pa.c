@@ -6,14 +6,14 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:32:13 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/01 20:48:14 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 06:59:58 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../HEADER/pushswap.h"
 
-void    pa(t_all *all)
+void	pa(t_all *all)
 {
-    push(all->stack_b, all->stack_a);
+	push(all->stack_b, all->stack_a);
 	ft_printf("pa\n");
 }

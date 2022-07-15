@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:07:34 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/07 02:06:08 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 06:57:05 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(char *str)
 {
-	int			x;
+	int				x;
 	long long int	res;
-	int			sign;
+	int				sign;
 
 	x = 0;
 	res = 0;

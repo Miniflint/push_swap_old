@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 14:56:01 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/10 23:10:03 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 07:08:56 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,27 @@
 
 void	three_numbers(t_all *all)
 {
-	int	nb1;
-	int	nb2;
-	int	nb3;
+	int	nb[3];
 
-	nb1 = all->stack_a->nb[0];
-	nb2 = all->stack_a->nb[1];
-	nb3 = all->stack_a->nb[2];
+	nb[0] = all->stack_a->nb[0];
+	nb[1] = all->stack_a->nb[1];
+	nb[2] = all->stack_a->nb[2];
 	if (check_order(all))
 		return ;
-	if (nb1 > nb2 && nb1 > nb3)
+	if (nb[0] > nb[1] && nb[0] > nb[2])
 	{
 		ra(all, 1);
-		if (nb2 > nb3)
+		if (nb[1] > nb[2])
 			sa(all, 1);
 	}
-	else if (nb1 < nb2 && nb1 < nb3)
+	else if (nb[0] < nb[1] && nb[0] < nb[2])
 	{
 		sa(all, 1);
 		ra(all, 1);
 	}
 	else
 	{
-		if (nb1 > nb2 && nb2 < nb3)
+		if (nb[0] > nb[1] && nb[1] < nb[2])
 			sa(all, 1);
 		else
 			rra(all, 1);
@@ -57,11 +55,12 @@ void	sort_five(t_all *all, int min)
 	if (all->stack_a->nb[1] == min)
 		ra(all, 1);
 }
+
 void	sort_to_five(t_all *all, int nb)
 {
 	int	min;
 
-	while(nb > 3)
+	while (nb > 3)
 	{
 		min = get_min(all->stack_a);
 		sort_five(all, min);

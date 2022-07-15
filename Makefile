@@ -33,7 +33,7 @@ RRT		= $(addprefix $(RRDIR)/,$(RRSRCS))
 PSH		= $(addprefix $(PSDIR)/,$(PSSRCS))
 
 LNAME	= ft_printf/libftprintf.a
-FILES	= $(OSSRCS) $(SRSRCS) $(OUSRCS) $(SWA) $(ROT) $(RRT) $(PSH) $(SDIR)/lilchecker/checker.c
+FILES	= $(OSSRCS) $(SRSRCS) $(OUSRCS) $(SWA) $(ROT) $(RRT) $(PSH)
 OBJS	= $(FILES:.c=.o)
 CFLAGS	= -Wall -Werror -Wextra 
 ifeq ($(DEBUG), debug)

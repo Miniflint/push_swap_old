@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:28:29 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/10 23:19:30 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 07:02:59 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ int	check_order(t_all *all)
 
 void	send_under_seven(t_all *all)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	if (all->max_size == 2)
-		if(all->stack_a->nb[0] > all->stack_a->nb[1])
+		if (all->stack_a->nb[0] > all->stack_a->nb[1])
 			sa(all, 1);
 	if (all->max_size == 3)
 		three_numbers(all);
@@ -41,15 +41,12 @@ void	send_under_seven(t_all *all)
 	else
 	{
 		i = all->stack_a->current_size;
-		while(i > 0)
+		while (i > 0)
 		{
 			j = all->formula_sort;
 			p_and_r_number(all, j / 2);
 			i--;
-			if (all->max_size > 100)
-				all->formula_sort = ((all->stack_a->current_size / 6) + 32);
-			else
-				all->formula_sort = ((all->stack_a->current_size / 6) + 18);
+			all->formula_sort = ((all->stack_a->current_size / 6) + 32);
 		}
 		big_sort_b(all);
 	}

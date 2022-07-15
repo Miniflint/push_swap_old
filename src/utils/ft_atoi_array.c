@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:01:39 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/08 01:00:20 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 06:58:20 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	free_splitted(void **str)
 
 void	create_array(char **argv, t_all *all)
 {
-	int i;
+	int	i;
 	int	j;
 
 	i = 0;
