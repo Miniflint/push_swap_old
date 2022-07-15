@@ -6,11 +6,11 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:07:34 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 09:32:16 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 09:44:27 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../HEADER/pushswap.h"
+#include "../../headers/pushswap.h"
 
 int	ft_atoi(char *str, t_all *all)
 {

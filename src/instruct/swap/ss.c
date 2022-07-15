@@ -6,11 +6,11 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:31:53 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 08:23:32 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 09:43:47 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../HEADER/pushswap.h"
+#include "../../../headers/pushswap.h"
 
 void	ss(t_all *all)
 {

@@ -6,11 +6,11 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 02:22:36 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 08:46:33 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 09:44:08 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../HEADER/pushswap.h"
+#include "../../headers/pushswap.h"
 
 int	get_max(t_stack *stack)
 {

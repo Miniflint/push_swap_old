@@ -6,11 +6,11 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:57:36 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 06:57:59 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 09:44:47 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../HEADER/pushswap.h"
+#include "../../headers/pushswap.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

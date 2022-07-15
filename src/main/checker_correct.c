@@ -6,11 +6,11 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 01:08:44 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 09:31:46 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 09:44:57 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../HEADER/pushswap.h"
+#include "../../headers/pushswap.h"
 
 void	check_double(t_all *all)
 {

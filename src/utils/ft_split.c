@@ -6,11 +6,11 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:03:27 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 08:45:59 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 09:44:41 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../HEADER/pushswap.h"
+#include "../../headers/pushswap.h"
 
 int	bloc_count(const char *s, char c)
 {
