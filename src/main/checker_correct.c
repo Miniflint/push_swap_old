@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 01:08:44 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 07:01:29 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 09:31:46 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_double(t_all *all)
 		{
 			if (i != j)
 				if (all->stack_a->nb[i] == all->stack_a->nb[j])
-					handle_error("Doublons !");
+					handle_error("Doublons !", all);
 			j++;
 		}
 		i++;

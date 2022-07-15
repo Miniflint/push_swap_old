@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:28:29 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 08:51:12 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 09:31:26 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ int	main(int argc, char **argv)
 	if (check_order(&all))
 		handle_error("Already in order", &all);
 	send_under_seven(&all);
+	free_all(&all);
 	return (0);
 }

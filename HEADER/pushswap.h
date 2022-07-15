@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:23:34 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 08:45:24 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 09:38:30 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		check_order(t_all *all);
 /* utils */
 int		ft_strlen(char *str);
 int		ft_isdigit(char c);
-int		ft_atoi(char *str);
+int		ft_atoi(char *str, t_all *all);
 void	ft_atoi_array(char *str, t_all *all);
 void	create_array(char **argv, t_all *all);
 void	print_stacks(t_all *all);
@@ -70,6 +70,6 @@ void	rrr(t_all *all);
 void	pa(t_all *all);
 void	pb(t_all *all);
 		/* utils push */
-void    push(t_stack *a, t_stack *b);
+void	push(t_stack *a, t_stack *b);
 
 #endif

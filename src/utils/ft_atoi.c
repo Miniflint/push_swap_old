@@ -6,13 +6,13 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:07:34 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 06:57:05 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 09:32:16 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../HEADER/pushswap.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(char *str, t_all *all)
 {
 	int				x;
 	long long int	res;
@@ -30,11 +30,11 @@ int	ft_atoi(char *str)
 	while (str[x])
 	{
 		if (!ft_isdigit(str[x]))
-			handle_error("NOT A NUMBER");
+			handle_error("only digits please", all);
 		res = (res * 10) + (str[x] - '0');
 		x++;
 	}
 	if (res * sign > INT_MAX || res * sign < INT_MIN)
-		handle_error("Out of max/min INT");
+		handle_error("Out of int max / min", all);
 	return (res * sign);
 }

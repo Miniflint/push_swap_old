@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 08:16:06 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 08:47:56 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 09:32:59 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ void	__init__all(t_all *all, int size)
 {
 	all->stack_a = (t_stack *)malloc(sizeof(t_stack));
 	all->stack_b = (t_stack *)malloc(sizeof(t_stack));
-	if (!all->stack_a || !all->stack_b)
+	if (!all->stack_a)
 		handle_error("Failed to malloc stack a", all);
 	if (!all->stack_b)
 		handle_error("Failed to malloc stack b", all);
 	all->max_size = size;
 	all->a_sorted = 0;
 	all->to_sort = all->max_size - all->a_sorted;
-	all->formula_sort = (all->max_size / 6 + 22);
+	all->formula_sort = (all->max_size / 6 + 32);
 	__init__stack(all);
 }

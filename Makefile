@@ -36,7 +36,7 @@ FILES	= $(OSSRCS) $(SRSRCS) $(OUSRCS) $(SWA) $(ROT) $(RRT) $(PSH)
 OBJS	= $(FILES:.c=.o)
 CFLAGS	= -Wall -Werror -Wextra 
 ifeq ($(DEBUG), debug)
-	CFLAGS += -fsanitize=address -g3
+	CFLAGS +=  -fsanitize=address -g3
 endif
 NAME	= push_swap
 CC		= gcc $(CFLAGS)
@@ -58,6 +58,7 @@ clean:
 
 fclean: clean
 	@echo "$(RED)\nDeleting executable..."
+	@rm -f $(NAME)
 	@rm -f $(OBJS)
 
 re: fclean all
