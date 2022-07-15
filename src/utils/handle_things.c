@@ -6,30 +6,40 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 06:25:54 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 06:58:03 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 08:46:47 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../HEADER/pushswap.h"
 
-void	little_handler(int i)
+static void	free_stck(t_stack *stack)
 {
-	if (i == 1)
-		handle_error("Not enough arguments");
-	else if (i == 2)
-		handle_error("Second error");
-	else if (i == 3)
-		handle_error("Only numbers");
+	int	i;
+
+	i = 0;
+	if (stack->current_size)
+	{
+		while (i < stack->current_size)
+		{
+			free(stack->nb[i]);
+			i++;
+		}
+	}
+	if (stack)
+		free(stack);
 }
 
-void	handle_error(char *str)
+void	free_all(t_all *all)
 {
-	ft_printf("\n./pushswap: [Error]: %s\n", str);
+	free_stck(all->stack_a);
+	free_stck(all->stack_b);
+}
+
+void	handle_error(char *str, t_all *all)
+{
+	write(2, "\n./push_swap: [Error]: ", 18);
+	write(2, str, ft_strlen(str));
+	write(2, "\n\0", 2);
+	free_all(all);
 	exit(EXIT_FAILURE);
-}
-
-void	handle_success(char *str, __unused t_all *all)
-{
-	ft_printf("Success: %s\n", str);
-	exit(EXIT_SUCCESS);
 }

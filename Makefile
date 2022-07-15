@@ -16,7 +16,7 @@ RRDIR	=	$(INSTR)/reverse_rotate
 PSDIR	=	$(INSTR)/push
 
 MSRCS	= main.c checker_correct.c
-SRT		= three_five.c bigsort.c sorting_utils.c
+SRT		= three_five.c bigsort.c sorting_utils.c get_max_or_min.c
 USRCS	= handle_things.c ft_strlen.c ft_atoi_array.c ft_isdigit.c ft_substr.c ft_split.c ft_atoi.c __init__.c
 SWASRCS	= sa.c sb.c ss.c
 ROTSRCS	= ra.c rb.c rr.c
@@ -32,7 +32,6 @@ ROT		= $(addprefix $(ROTDIR)/,$(ROTSRCS))
 RRT		= $(addprefix $(RRDIR)/,$(RRSRCS))
 PSH		= $(addprefix $(PSDIR)/,$(PSSRCS))
 
-LNAME	= ft_printf/libftprintf.a
 FILES	= $(OSSRCS) $(SRSRCS) $(OUSRCS) $(SWA) $(ROT) $(RRT) $(PSH)
 OBJS	= $(FILES:.c=.o)
 CFLAGS	= -Wall -Werror -Wextra 
@@ -44,13 +43,9 @@ CC		= gcc $(CFLAGS)
 
 all: $(NAME)
 
-ft_printf_compile:
-	@echo "Compiling ft_printf"
-	@make -C ft_printf
-
-$(NAME): $(OBJS) ft_printf_compile
+$(NAME): $(OBJS)
 	@echo "$(GREEN)\n\nCompiling push_swap..."
-	@$(CC) $(OBJS) -o $(NAME) $(LNAME)
+	@$(CC) $(OBJS) -o $(NAME)
 	@echo "$(GREEN)Done"
 
 %.o: %.c
@@ -59,12 +54,10 @@ $(NAME): $(OBJS) ft_printf_compile
 
 clean:
 	@echo "$(RED)\nDeleting objects..."
-	@make -C ft_printf clean
 	@rm -f $(OBJS)
 
 fclean: clean
 	@echo "$(RED)\nDeleting executable..."
-	@make -C ft_printf fclean
 	@rm -f $(OBJS)
 
 re: fclean all

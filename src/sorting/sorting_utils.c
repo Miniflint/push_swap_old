@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 02:22:36 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 07:06:47 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 08:46:33 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,46 +44,55 @@ int	get_min(t_stack *stack)
 	return (tmp);
 }
 
-int	get_min_max_i(t_all *all, int max, int len)
+int	get_size_push(t_all *all, int min)
 {
-	int		i;
-	int		j;
-	long	tmp;
+	int	i;
+	int	j;
+	int	x;
 
 	i = 0;
-	tmp = INT_MIN;
-	all->to_sort = all->max_size - all->a_sorted;
-	if (len >= all->to_sort)
-		return (get_min(all->stack_a));
-	while (i < len - 1)
+	j = 0;
+	while (i < all->stack_a->current_size)
 	{
-		j = 0;
-		while (j < all->to_sort)
-		{
-			if (all->stack_a->nb[j] > tmp && all->stack_a->nb[j] < max)
-				tmp = all->stack_a->nb[j];
+		if (all->stack_a->nb[i] > min)
 			j++;
-		}
-		max = tmp;
-		tmp = INT_MIN;
 		i++;
 	}
-	return (max);
+	i = 0;
+	j = j / 2;
+	while (i < all->stack_a->current_size && j)
+	{
+		if (all->stack_a->nb[i] > min)
+		{
+			x = all->stack_a->nb[i];
+			j--;
+		}
+		i++;
+	}
+	return (x);
 }
+
+// min = get_max_min(all, get_min(all->stack_a), nb);
 
 void	p_and_r_number(t_all *all, int nb)
 {
-	int	max;
 	int	i;
 	int	len;
+	int	min;
+	int	mid;
 
 	i = 0;
-	max = get_min_max_i(all, get_max(all->stack_a), nb);
+	min = get_min_max(all, get_max(all->stack_a), nb);
+	mid = get_size_push(all, min);
 	len = all->to_sort;
 	while (i < len)
 	{
-		if (all->stack_a->nb[0] >= max)
+		if (all->stack_a->nb[0] >= min)
+		{
 			pb(all);
+			if (all->stack_b->nb[0] < mid)
+				rb(all, 1);
+		}
 		else
 			ra(all, 1);
 		i++;

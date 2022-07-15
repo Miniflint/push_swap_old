@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:32:05 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/01 21:14:50 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 08:22:25 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ void	rra(t_all *all, int rrr)
 	}
 	all->stack_a->nb[0] = tmp;
 	if (rrr)
-		ft_printf("rra\n");
+		write(1, "rra\n", 4);
 }

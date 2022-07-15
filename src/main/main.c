@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:28:29 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 07:02:59 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 08:51:12 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	main(int argc, char **argv)
 	t_all	all;
 
 	if (argc < 2)
-		handle_error("not enough arguments");
+		handle_error("not enough arguments", &all);
 	else if (argc == 2)
 	{
 		__init__all(&all, bloc_count(argv[1], ' '));
@@ -70,7 +70,7 @@ int	main(int argc, char **argv)
 	}
 	check_double(&all);
 	if (check_order(&all))
-		handle_success("Already in order", &all);
+		handle_error("Already in order", &all);
 	send_under_seven(&all);
 	return (0);
 }

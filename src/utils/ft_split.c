@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:03:27 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 06:57:45 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 08:45:59 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,11 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	if (!s)
-		handle_error("No str sent");
+		return (NULL);
 	blockcount = bloc_count((char *)s, c);
 	array = (char **)malloc(sizeof(char **) * (blockcount + 1));
 	if (!array)
-		handle_error("Couldn't malloc");
+		return (NULL);
 	while (blockcount--)
 	{
 		while (*s == c && *s)

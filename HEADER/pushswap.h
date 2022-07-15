@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:23:34 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/10 23:01:29 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/15 08:45:24 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include "pushstruct.h"
-# include "../ft_printf/ft_printf.h"
 
 /* Sorting */
 void	three_numbers(t_all *all);
@@ -26,15 +25,15 @@ void	big_sort_b(t_all *all);
 void	p_and_r_number(t_all *all, int nb);
 
 	/* Sorting utils */
-int		get_min_max_i(t_all *all, int max, int len);
+int		get_min_max(t_all *all, int max, int len);
+int		get_max_min(t_all *all, int min, int len);
+int		get_size_push(t_all *all, int min);
 int		get_min(t_stack *stack);
 int		get_max(t_stack *stack);
-int		i_next_nbr(t_stack *n, int min_size);
 
 /* Errors handling */
-void	little_handler(int i);
-void	handle_success(char *str, t_all *all);
-void	handle_error(char *str);
+void	free_all(t_all *all);
+void	handle_error(char *str, t_all *all);
 
 /* init */
 void	__init__all(t_all *all, int size);
@@ -72,9 +71,5 @@ void	pa(t_all *all);
 void	pb(t_all *all);
 		/* utils push */
 void    push(t_stack *a, t_stack *b);
-
-
-/* deleted later */
-void	check_func(t_all *all);
 
 #endif
