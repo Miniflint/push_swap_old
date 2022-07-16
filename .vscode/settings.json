@@ -9,6 +9,7 @@
 		"set": "c",
 		"string_view": "c",
 		"unordered_map": "c",
-		"unordered_set": "c"
+		"unordered_set": "c",
+		"pushswap.h": "c"
 	}
 }

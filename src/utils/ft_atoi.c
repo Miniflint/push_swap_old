@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:07:34 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/16 11:26:35 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/16 12:24:24 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int	ft_atoi(char *str, t_all *all)
 	while (str[x])
 	{
 		if (!ft_isdigit(str[x]))
-			handle_error("only digits please", all);
+			handle_error("Error", all);
 		res = (res * 10) + (str[x] - '0');
 		x++;
 	}
 	if (res * sign > INT_MAX || res * sign < INT_MIN)
-		handle_error("Out of int max / min", all);
+		handle_error("Error", all);
 	return (res * sign);
 }

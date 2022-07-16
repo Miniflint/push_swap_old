@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 14:56:01 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/16 12:12:35 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/16 12:23:52 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	two_push(t_all *all)
 		i = 0;
 		min_i = min_ind(all);
 		if (min_i == -1)
-			handle_error("error damn", all);
+			handle_error("Error", all);
 		if (min_i == 1)
 			sa(all, 1);
 		else if (min_i > all->stack_a->current_size / 2)
