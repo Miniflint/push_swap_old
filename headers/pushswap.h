@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:23:34 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 09:38:30 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/16 11:31:16 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		get_max(t_stack *stack);
 /* Errors handling */
 void	free_all(t_all *all);
 void	handle_error(char *str, t_all *all);
+void	success_n(t_all *all);
 
 /* init */
 void	__init__all(t_all *all, int size);

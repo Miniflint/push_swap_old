@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 02:22:36 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 09:44:08 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/16 11:22:46 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,6 @@ int	get_size_push(t_all *all, int min)
 	}
 	return (x);
 }
-
-// min = get_max_min(all, get_min(all->stack_a), nb);
 
 void	p_and_r_number(t_all *all, int nb)
 {

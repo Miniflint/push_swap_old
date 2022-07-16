@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 06:25:54 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/15 09:44:52 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/07/16 11:31:44 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,14 @@ void	free_all(t_all *all)
 	free(all->stack_b);
 }
 
+void	success_n(t_all *all)
+{
+	free_all(all);
+	exit(EXIT_SUCCESS);
+}
+
 void	handle_error(char *str, t_all *all)
 {
-	write(2, "\n./push_swap: [Error]: ", 23);
 	write(2, str, ft_strlen(str));
 	write(2, "\n\0", 2);
 	free_all(all);
