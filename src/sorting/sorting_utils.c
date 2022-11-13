@@ -6,7 +6,7 @@
 /*   By: tgoel <tgoel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 02:22:36 by tgoel             #+#    #+#             */
-/*   Updated: 2022/07/16 11:22:46 by tgoel            ###   ########.fr       */
+/*   Updated: 2022/11/13 20:33:33 by tgoel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ void	p_and_r_number(t_all *all, int nb)
 	int	mid;
 
 	i = 0;
-	min = get_min_max(all, get_max(all->stack_a), nb);
-	mid = get_size_push(all, min);
+	min = get_max_min(all, get_min(all->stack_a), nb);
+	mid = get_max_min(all, get_min(all->stack_a), nb / 2);
 	len = all->to_sort;
 	while (i < len)
 	{
-		if (all->stack_a->nb[0] >= min)
+		if (all->stack_a->nb[0] <= min)
 		{
 			pb(all);
 			if (all->stack_b->nb[0] < mid)

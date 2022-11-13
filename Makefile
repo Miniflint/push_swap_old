@@ -63,4 +63,10 @@ fclean: clean
 
 re: fclean all
 
+build:
+	docker build -t arch .
+	docker run -ti arch
+prune:
+	docker system prune -a --volumes
+
 .PHONY:	clean fclean all re
